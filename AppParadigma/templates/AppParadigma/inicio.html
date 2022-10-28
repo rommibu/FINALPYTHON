@@ -1,0 +1,46 @@
+{% extends "AppParadigma/padre.html" %}
+{% load humanize %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>PARADIGMA ARTE + IDEAS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+{% for post in posts %}
+<article>
+    <div class="container-article">
+        <img src="{{ post.user.profile.image.url }}">
+        <div>
+            <h2 class="username"><a href="{% url 'profile' post.user.username %}">@{{ post.user.username }}<a></a></h2>
+            <i class="clock"></i>
+            <time data-time="#">{{ post.timestamp|naturaltime }}</time>
+            <div class="post">{{ post.content }}</div>
+        </div>
+    </div>
+</article>
+{% endfor %}
+
+<h1 class="mb-55">EN PARADIGMA BRINDAMOS INFORMACION DE SERVICIOS SOCIALES PARA EL VECINO BARRIAL</h1>
+<p><h2>En nuestra pagina encontraras informacion de cobertura medica al alcance de tus necesidades.</h2></p><br>
+<p><h2>Los asociados cuentan con:</h2></p><br>
+<table>
+    <tr>
+        <td>
+            <ol>
+                <li><b>Salon para eventos</b><br> </li><br>
+                <li><b>Informacion barrial varia</b><br> </li><br>
+                <li><b>Noticias de la zona</b><br> </li><br>
+                <li><b>Eventos diferentes cada semana</b><br> </li><br>
+                <li><b>Descuentos en los comercios adheridos de la zona</b><br> </li><br>
+                <li><b>Informacion sobre centros de Votacion y empadronamiento</b><br> </li><br>
+                <li><b>Asesoria legal</b><br> </li><br>
+            </ol>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

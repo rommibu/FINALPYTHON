@@ -1,0 +1,41 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>GUSTOS Y PREFERENCIAS DE ASOCIADOS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+<center>
+
+    <h2>INGRESA TUS DATOS PARA SER PARTE DE PARADIGMA!</h2>
+    
+        
+    <form action="{% url 'caracteristicas' %}" method="POST"> {% csrf_token %}
+        <p class="center">Permitenos conocer tus gustos y preferencias para proporcionarte informacion de tu interes!!</p>
+    
+    <table>
+        {{ formulario.as_table }}
+    </table>
+    
+    <input type="submit", value="Enviar">
+    
+    
+    </form>
+    </center>
+    <br><br>
+    
+    <h2>QUEREMOS CONOCERTE!</h2>
+    
+    
+    <form action="{% url 'leerCaracteristicas' %}" method="GET"> {% csrf_token %}
+    
+    
+    <input type="submit", value="ASI SON:!">
+    
+    </form>
+
+{% endblock %}

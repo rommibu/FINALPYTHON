@@ -1,0 +1,41 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>SE PARTE DE NUESTROS ESPACIO</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+<center>
+
+    <h2>INGRESA TUS DATOS PARA SER PARTE DE PARADIGMA!</h2>
+    
+        
+    <form action="{% url 'asociado' %}" method="POST"> {% csrf_token %}
+        <p class="center">Asociate a nuestro espacio de Servicios Sociales y ten a mano toda la informacion de interes vecinal!</p>
+    
+    <table>
+        {{ formulario.as_table }}
+    </table>
+    
+    <input type="submit", value="Enviar">
+    
+    
+    </form>
+    </center>
+    <br><br>
+    
+    <h2>ASOCIADOS DE NUESTROS SERVICIOS</h2>
+    
+    
+    <form action="{% url 'leerAsociado' %}" method="GET"> {% csrf_token %}
+    
+    
+    <input type="submit", value="Conoce nuestros Asociados!">
+    
+    </form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+<h1 class="mb-5">REGISTRATE</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+<center>
+<br><br><br><br>
+<form class="form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button type="submit" id="submit">REGISTRATE</button>
+</form>
+</center>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,15 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block contenido_que_cambia %} 
+
+<form class="form" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<button type="submit" id="submit">Login</button>
+</form>
+
+{% endblock %}

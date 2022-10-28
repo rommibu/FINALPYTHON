@@ -1,0 +1,70 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>ARTICULOS INTERESANTES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+<h1>ESTE ES EL CONTENIDO DEL INICIO</h1>
+
+<!DOCTYPE html>
+<html>  
+<head> 
+    <meta charset="utf-8">
+    <title>PARADIGMA ARTE+IDEAS</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'estilos.css' %}">
+</head>   
+<body>
+    <h1>LEE LO ULTIMO EN NOTICIAS DE INTERES</h1>
+<section>
+    {% for elemento in articulos %}
+        <article>
+            <h3>{{ elemento.nombre }}</h3>
+                <p>
+                    {{ elemento.contenido }}
+                </p>
+            <img src="{{ elemento.imagen }}"
+            <footer>
+                Autor: {{ elemento.autor }}
+            </footer>
+        </article>
+    {% endfor %}
+</section>
+
+<section>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h2>Comunicate con nosotros!</h1>
+        
+        {{ form.as_ul }} 
+
+        <input type="submit" name="enviar" value="Enviar Comentario">
+        {% if mensaje %}
+            <h2>{{ mensaje }}</h2>
+        {% endif %}
+
+    </form>
+</section>
+
+<section>
+<form method="post">
+	{% csrf_token %}
+    <h2>PUBLICA TUS POST!</h1>
+	{{ form.as_p }}
+	<button type="submit" class="post" id="" >Post!</button>
+    {% if mensaje %}
+            <h2>{{ mensaje }}</h2>
+    {% endif %}
+</form>
+</section>
+
+{% endblock %}
+</body>
+</html>
+
+
+

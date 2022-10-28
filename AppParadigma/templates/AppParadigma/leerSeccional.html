@@ -1,0 +1,33 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>SECCIONALES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+{% if mensaje %}
+<h2>{{ mensaje }}</h2>
+
+{% else %}
+
+<br><h1>LISTA SECCIONALES REGISTRADAS</h1><br><br>
+
+{% for seccional in object_list %}
+
+    <ul>
+        <li><h3>{{ seccional }}</h3></li>
+    </ul>
+
+
+{% endfor %}
+
+
+{% endblock %}
+
+
+
+

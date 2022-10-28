@@ -1,0 +1,28 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>SECCIONALES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+<br><h1>PUEDE EDITAR INFORMACION DEL ASOCIADO {{ nombre_asociado }}</h1><br><br>
+<form action="{% url 'editarAsociado' id %}" method="POST"> {% csrf_token %}
+
+<table>
+
+    {{ formulario.as_table }}
+</table>
+
+<input type="submit", value="Enviar">
+    
+</form> 
+
+{% endblock %}
+
+
+
+

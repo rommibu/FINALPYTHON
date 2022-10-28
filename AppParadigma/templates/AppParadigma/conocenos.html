@@ -1,0 +1,99 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>QUIENES SOMOS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>INFORMACION SERVICIO SOCIAL BARRIAL</title>
+    <title>PAGINA PARADIGMA ARTE+IDEAS</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: rgb(129, 150, 145);
+        }
+
+        .color-fondo {
+            background-color: bisque;
+        }
+
+        .color-fondo2 {
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <center>
+            <h1 class="mb-55">BIENVENIDOS A PARADIGMAS, ESPACIO DE SERVICIO SOCIAL PARA LA COMUNIDAD BARRIAL</h1>
+        </center>
+
+        <div class="color-fondo">
+            <h1>TENDRAS A MANO TODA LA INFORMACION QUE NECESITAS DE TU SERVICIO  A MANO</h1>
+            <P>
+            <h2>En PARADIGMA<b></b> Unificamos todo lo referente a los servicios sociales de Grupos Familiares,
+                pertenecientes a nuestra zona barrial</h2>
+            </P><br><br>
+            <p>
+            <h3>Si deseas informarte personalmente, o precisas hacer uso de nuestro espacio, comunicate con nosotros al
+                <a href="https://wa.me/5493516079540?text=Hola,%20para%20informacion%20indicanos%20dia%20horario%20y%20cantidad%20de%20horas%20que%20deseas"
+                    target="_BLANK">Whatsapp</a></h3>
+            </p><br><br>
+
+            <form method="post"><br>
+                <p>Indicanos fecha posible de reunion?:</p>
+                <input type="date" required=""><br><br>
+                <p>Indicanos Hora posible de la reunion?:</p>
+                <input type="time" required=""><br><br>
+            </form>
+
+
+    
+        <h6>NOS GUSTARIA SABER QUE INFORMACION TE GUSTARIA PROPORCIONARAMOS <b>PARADIGMA ARTE+IDEAS</b></h6>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" required="" value="Nombre de pila"><br><br>
+            <input type="email" required="" value="Mail"><br><br>
+            <textarea type="comentario">"Escribe tu propuesta y/o comentario"</textarea><br><br>
+            <input type="submit" name="enviar" value="Enviar Comentario"><br>
+        </form>
+    </div>
+    <aside>
+
+        <div>
+            <h1>Que es PARADIGMA ARTE+IDEAS?</h1>
+            <h2>
+                <p>En Paradigma arte + ideas, nos orientamos al conjunto de actividades humanas de índole creativa,
+                    informativa y/o comunicativa,</p>
+                <p>persiguiendo mediante la cultura y los servicios sociales, una finalidad estética de manera
+                    subjetiva, un apoyo social a la mano de los vecinos;</p>
+                <p>de este modo dejamos fluir el sentir del día a día con libertad, informacion, servicios y utopía
+                    total!</p>
+            </h2>
+        </div>
+
+        ><footer>
+            <h2><a href="https://www.facebook.com/Paradigmasarteideas-110791558389516" target="_BLANK">Seguinos en
+                    nuestras redes sociales facebook</a></h2>
+
+        </footer>
+    </aside>
+</body>
+
+</html>
+
+
+
+{% endblock %}

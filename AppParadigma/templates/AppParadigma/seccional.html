@@ -1,0 +1,46 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>SECCIONALES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+<h1>ESTE ES EL CONTENIDO DE SECCIONAL</h1>
+
+{% for seccional in listado %}
+
+<div class="card mb-4"
+    <div class="card-body">
+        <h2 class="card-title">{{ seccional.nombre }}</h2>
+        <ahref="{{ seccional.url }}" class="btn btn-primary">Ver mas</a>
+    </div>
+
+<h1>{{ seccional }}</h1>
+
+{% endfor %}
+
+</form>
+</center>
+<br><br>
+
+<h2>SECCIONALES ADHERIDAS</h2>
+
+
+<form action="{% url 'leerSeccional' %}" method="GET"> {% csrf_token %}
+
+
+<input type="submit", value="SECCIONALES ADHERIDAS!">
+
+</form>
+
+{% endblock %}
+
+
+
+
+
+

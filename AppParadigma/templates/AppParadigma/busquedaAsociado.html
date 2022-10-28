@@ -1,0 +1,38 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>SECCIONALES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+{% if mensaje %}
+
+<h2>{{ mensaje }}</h2>
+
+{% else %}
+
+
+<h1>RESULTADOS DE LA BUSQUEDA</h1>
+
+{% for familia in documentos %}
+
+<h2>{{ familia.nombre }}</h2>
+<h2>{{ familia.apellido }}</h2>
+<h2>{{ familia.dni }}</h2>
+--
+
+{% endfor %}
+
+
+{% endif %}
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,51 @@
+{% extends "AppParadigma/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %} 
+<h1 class=mb-5>CARACTERISTICAS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %} 
+
+{% if mensaje %}
+
+<h2>{{ mensaje }}</h2>
+
+{% else %}
+
+<br><h1>CONOCIENDONOS</h1><br><br>
+
+{% for gustos in object_list %}
+
+    <ul>
+        <li><h3>{{ caracteristicas }}</h3></li>
+    </ul>
+
+
+{% endfor %}
+
+{% for asociado in asociados %}
+
+<h4>{{ caracteristica.asociado }} - {{ caracteristica.codigo }} - {{ caracteristica.fecha_creacion }} {{ caracteristicas.intereses }}</h4>
+<button>
+    <a href="{% url 'eliminarCaracteristicas' asociado.id %}">ELIMINAR CARACTERISTICAS</a>
+</button>
+<br>
+{% endfor %}
+    
+{% endif %}
+<br>
+<a class="btn btn-success" href="{% url 'asociado' %}">AGREGAR ASOCIADO</a>
+
+
+
+{% endblock %}
+
+
+{% endblock %}
+
+
+
+
